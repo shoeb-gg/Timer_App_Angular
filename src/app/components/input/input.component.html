@@ -1,9 +1,11 @@
 <div class="inp">
-  <input class="in" type="number" value="0" min="0" max="60" />
+  <input class="in" #sec type="number" value="0" min="0" max="60" />
   <h5>seconds</h5>
-  <input class="in" type="number" value="0" min="0" max="60" />
+  <input class="in" #min type="number" value="0" min="0" max="60" />
   <h5>minutes</h5>
-  <input class="in" type="number" value="0" min="0" max="99" />
+  <input class="in" #hr type="number" value="0" min="0" max="999" />
   <h5>hours</h5>
-  <button class="go">GO</button>
+  <button class="go" (click)="getValue(sec.value, min.value, hr.value)">
+    GO
+  </button>
 </div>

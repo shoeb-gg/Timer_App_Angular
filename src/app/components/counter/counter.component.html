@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card mt-5 w-75">
+    <h5 class="card-header text-center">Countdown Timer</h5>
+    <div class="card-body mt-3">
+      <h1 class="text-center font-weight-bold">
+        {{ hours < 10 ? "0" + hours : hours }}:{{
+          minutes < 10 ? "0" + minutes : minutes
+        }}:{{ seconds < 10 ? "0" + seconds : seconds }}
+      </h1>
+
+      <div class="d-flex justify-content-center mt-5">
+        <a class="btn {{ snpStyle }} mr-3 text-white" (click)="sp()">{{
+          snp
+        }}</a>
+        <a class="btn {{ stpStyle }} text-white" (click)="stpbtn()">{{
+          stp
+        }}</a>
+      </div>
+    </div>
+  </div>
+</div>
