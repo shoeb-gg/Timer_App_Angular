@@ -57,8 +57,8 @@ export class InputComponent implements OnInit {
     this.dur.setDuration(this.seconds, this.minutes, this.hours);
     this.dur.updateCounter();
 
-    this.sec.nativeElement.value = 0;
-    this.min.nativeElement.value = 0;
-    this.hr.nativeElement.value = 0;
+    this.sec.nativeElement.value = '';
+    this.min.nativeElement.value = '';
+    this.hr.nativeElement.value = '';
   }
 }
