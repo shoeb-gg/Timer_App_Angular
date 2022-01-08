@@ -8,7 +8,6 @@ import { DurationService } from '../../services/duration.service';
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent implements OnInit {
-  private data = {};
   seconds = 0;
   minutes = 0;
   hours = 0;

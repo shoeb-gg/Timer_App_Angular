@@ -1,0 +1,17 @@
+.clr1 {
+  background-color: #e06363;
+}
+.clr2 {
+  background-color: #f0dfc0;
+}
+
+.mainBoi {
+  font-size: 100px;
+}
+.zm {
+  transition: transform 0.2s;
+}
+
+.zm:hover {
+  transform: scale(1.13);
+}

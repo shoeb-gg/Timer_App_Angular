@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card mt-4 w-75">
+    <h5 class="card-header text-center clr1 font-weight-bold">Stopwatch</h5>
+    <div class="card-body pt-5 clr2">
+      <h1 class="text-center font-weight-bold mainBoi">
+        {{ hours < 10 ? "0" + hours : hours }}:{{
+          minutes < 10 ? "0" + minutes : minutes
+        }}:{{ seconds < 10 ? "0" + seconds : seconds }}
+      </h1>
+
+      <div class="d-flex justify-content-center mt-5">
+        <a
+          class="btn {{ snpStyle }} mr-3 text-white font-weight-bold zm"
+          (click)="sp()"
+          >{{ snp }}</a
+        >
+        <a
+          class="btn {{ stpStyle }} text-white font-weight-bold zm"
+          (click)="stpbtn()"
+          >{{ stp }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
