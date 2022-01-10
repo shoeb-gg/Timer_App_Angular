@@ -36,6 +36,7 @@ export class StopwatchCounterComponent implements OnInit {
         if (this.minutes > 58) {
           this.hours++;
           this.minutes = 0;
+          this.seconds = 0;
         } else {
           this.minutes++;
           this.seconds = 0;
