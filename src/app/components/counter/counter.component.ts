@@ -56,6 +56,7 @@ export class CounterComponent implements OnInit {
           } else {
             this.hours--;
             this.minutes += 59;
+            this.seconds += 59;
           }
         }
       } else {
