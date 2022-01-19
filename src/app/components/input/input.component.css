@@ -57,3 +57,23 @@ h5 {
 .zm2:hover {
   transform: scale(1.08);
 }
+
+@media (max-width: 710px) {
+  .inp {
+    flex-direction: column;
+    align-items: center;
+  }
+  .each-input {
+    margin: 10px;
+  }
+  input {
+    width: 80px;
+  }
+  h5 {
+    width: 100px;
+  }
+  .go {
+    align-self: flex-start;
+    margin: 10px 0 0;
+  }
+}
