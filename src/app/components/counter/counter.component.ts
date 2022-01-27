@@ -20,6 +20,9 @@ export class CounterComponent implements OnInit {
       this.hours = obj.hr;
     });
   }
+  neverGive = new Audio(
+    '../../../assets/Rick Astley-Never Gonna Give You Up.mp3'
+  );
 
   snp: string = 'Start';
   snpStyle: string = 'btn-success';
@@ -70,8 +73,12 @@ export class CounterComponent implements OnInit {
         } else {
           if (this.seconds != 0) {
             this.seconds--;
+          } else {
           }
         }
+      }
+      if (this.seconds == 0 && this.minutes == 0 && this.hours == 0) {
+        this.rickRoll();
       }
     }, 1000);
   }
@@ -87,5 +94,16 @@ export class CounterComponent implements OnInit {
       this.stpStyle == 'btn-danger' ? 'btn-primary' : 'btn-danger';
     this.snp = 'Start';
     this.snpStyle = 'btn-success';
+
+    this.stopRickRoll();
+  }
+
+  rickRoll() {
+    this.neverGive.load();
+    this.neverGive.play();
+  }
+  stopRickRoll() {
+    this.neverGive.pause();
+    this.neverGive.currentTime = 0;
   }
 }
