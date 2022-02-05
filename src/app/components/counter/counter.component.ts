@@ -12,6 +12,8 @@ export class CounterComponent implements OnInit {
   minutes = 0;
   hours = 0;
 
+  public audioOn = false;
+
   constructor(private dur: DurationService) {}
   ngOnInit(): void {
     this.dur.durationUpdate$.subscribe((obj) => {
@@ -79,6 +81,8 @@ export class CounterComponent implements OnInit {
       }
       if (this.seconds == 0 && this.minutes == 0 && this.hours == 0) {
         this.rickRoll();
+        this.counterRunning = false;
+        this.snp = this.snp == 'Start' ? 'Pause' : 'Start';
       }
     }, 1000);
   }
@@ -95,15 +99,20 @@ export class CounterComponent implements OnInit {
     this.snp = 'Start';
     this.snpStyle = 'btn-success';
 
+    this.counterRunning = false;
+
     this.stopRickRoll();
   }
 
   rickRoll() {
     this.neverGive.load();
     this.neverGive.play();
+    this.audioOn = true;
   }
+
   stopRickRoll() {
     this.neverGive.pause();
     this.neverGive.currentTime = 0;
+    this.audioOn = false;
   }
 }
