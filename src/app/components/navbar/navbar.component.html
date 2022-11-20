@@ -24,8 +24,44 @@
         <a class="nav-link" href="#">Lap(in progress)</a>
       </li>
     </ul>
-    <span class="nav-item active float-right text-decoration-none">
-      <a class="text-dark" href="#">Sign In</a>
+
+    <span
+      *ngIf="!loggedIn"
+      class="nav-item float-right text-decoration-none d-flex"
+    >
+      <asl-google-signin-button
+        class="ml-1"
+        type="standard"
+        theme="filled_black"
+      ></asl-google-signin-button>
+    </span>
+
+    <span class="dropleft">
+      <span
+        *ngIf="loggedIn"
+        style="cursor: pointer"
+        class="float-right d-flex align-items-center bg-dark p-1 px-2 text-white rounded dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <img
+          style="{{ photoStyle }}"
+          src="{{ imgUrl }}"
+          class="mr-1 rounded-circle"
+        />
+        {{ firstName }}
+
+        <div
+          (click)="logOut()"
+          class="dropdown-menu bg-dark text-white pl-3"
+          aria-labelledby="dropdownMenuButton"
+        >
+          Log Out
+        </div>
+      </span>
     </span>
   </div>
 </nav>
